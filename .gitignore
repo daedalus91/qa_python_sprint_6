@@ -1,0 +1,10 @@
+__pycache__/
+locators/__pycache__/
+pages/__pycache__/
+tests/__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.idea/
+allure-report/
