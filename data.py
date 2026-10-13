@@ -7,10 +7,6 @@ class Urls:
     DZEN_DOMAIN = "dzen.ru"
 
 
-def delivery_date(days_ahead):
-    return (date.today() + timedelta(days=days_ahead)).strftime("%d.%m.%Y")
-
-
 FAQ_DATA = [
     (0, "Сколько это стоит? И как оплатить?",
      "Сутки — 400 рублей. Оплата курьеру — наличными или картой."),
@@ -40,7 +36,7 @@ ORDER_DATA_1 = {
     "address": "Москва, ул. Ленина, д. 10",
     "metro": "Сокольники",
     "phone": "+79991234567",
-    "date": delivery_date(1),
+    "days_until_delivery": 1,
     "rental_period": "сутки",
     "colors": ["black"],
     "comment": "Позвоните за час",
@@ -52,7 +48,7 @@ ORDER_DATA_2 = {
     "address": "Москва, пр. Мира, 25 кв 7",
     "metro": "Черкизовская",
     "phone": "89005556677",
-    "date": delivery_date(5),
+    "days_until_delivery": 5,
     "rental_period": "семеро суток",
     "colors": ["black", "grey"],
     "comment": "",

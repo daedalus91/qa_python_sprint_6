@@ -2,6 +2,7 @@ import allure
 from selenium.webdriver.common.keys import Keys
 
 from data import Urls
+from helpers import generate_delivery_date
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
 
@@ -43,7 +44,7 @@ class OrderPage(BasePage):
 
     @allure.step("Заполнить форму «Про аренду»")
     def fill_rent_form(self, data):
-        self.set_delivery_date(data["date"])
+        self.set_delivery_date(generate_delivery_date(data["days_until_delivery"]))
         self.select_rental_period(data["rental_period"])
         self.select_colors(data["colors"])
         if data["comment"]:
